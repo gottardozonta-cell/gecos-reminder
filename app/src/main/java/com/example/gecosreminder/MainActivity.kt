@@ -363,3 +363,32 @@ fun PermRow(nome: String, ok: Boolean, enabled: Boolean = true, onAsk: () -> Uni
         if (!ok) TextButton(enabled = enabled, onClick = onAsk) { Text("Concedi") }
     }
 }
+
+@Composable
+fun PermRow(nome: String, ok: Boolean, enabled: Boolean = true, onAsk: () -> Unit) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Icon(
+            if (ok) Icons.Default.Check else Icons.Default.Warning,
+            contentDescription = if (ok) "OK" else "Da concedere",
+            tint = if (ok) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error
+        )
+        Text(nome, Modifier.weight(1f).padding(start = 8.dp))
+        if (!ok) TextButton(enabled = enabled, onClick = onAsk) { Text("Concedi") }
+    }
+}
+
+fun elencoApp(c: Context): List<Pair<String, String>> {
+    val i = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER)
+    return c.packageManager.queryIntentActivities(i, 0)
+        .mapNotNull {
+            val pkg = it.activityInfo?.packageName ?: return@mapNotNull null
+            val label = try { it.loadLabel(c.packageManager).toString() } catch (_: Exception) { pkg }
+            pkg to label
+        }
+        .distinctBy { it.first }
+        .filter { it.first != c.packageName }
+        .sortedBy { it.second.lowercase() }
+}
