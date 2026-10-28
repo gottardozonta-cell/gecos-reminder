@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Corona: cappello superiore -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M48,25 L60,25 A2.5,2.5 0 0 1 62.5,27.5 L62.5,28.5 A2.5,2.5 0 0 1 60,31 L48,31 A2.5,2.5 0 0 1 45.5,28.5 L45.5,27.5 A2.5,2.5 0 0 1 48,25 Z"/>
+
+    <!-- Corona: stelo -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M51,31 L57,31 L57,39 L51,39 Z"/>
+
+    <!-- Pulsanti laterali -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M70.5,41.5 L76,36 L80.5,40.5 L75,46 Z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M37.5,41.5 L32,36 L27.5,40.5 L33,46 Z"/>
+
+    <!-- Cassa del cronometro (anello) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M28,62 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0 Z M33,62 a21,21 0 1,1 42,0 a21,21 0 1,1 -42,0 Z"/>
+
+    <!-- Lettera g: pancia -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M43,57 a6.5,6.5 0 1,0 13,0 a6.5,6.5 0 1,0 -13,0"/>
+
+    <!-- Lettera g: gambo e coda -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M56,57 L56,65 C56,69.5 53.5,71.8 50,71.3 C47.3,70.9 45.6,69 45.4,66.6"/>
+
+    <!-- Lettera z intrecciata al gambo della g -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M55,51.5 L66,51.5 L55,67.5 L66,67.5"/>
+</vector>
