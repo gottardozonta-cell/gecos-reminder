@@ -21,7 +21,7 @@ object Geo {
         }
     } catch (e: Exception) { null }
 
-    private fun Task<Location>.await(): Location? =
+    private suspend fun Task<Location>.await(): Location? =
         suspendCancellableCoroutine { cont ->
             addOnSuccessListener { if (cont.isActive) cont.resume(it) }
             addOnFailureListener { if (cont.isActive) cont.resume(null) }
